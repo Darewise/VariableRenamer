@@ -184,5 +184,179 @@ Also look at the content of .dep.json:
     }
 }
 ```
-With all of this, you should be able to create a run.rsp for clang.
-Then execute run.bat
+With all of this, you should be able to create a run.rsp for clang. (Do not include pch, we probably don't need to and if we do need, then it would have to be generated with clang and not cl.exe)
+Then execute run.bat. (Very long to process)
+I was able to obtain this result:
+```
+const TArray<UObject*>& a_objects
+const TArray<UObject *> & Objects
+
+TSharedPtr<class IToolkitHost> a_toolKitHost = TSharedPtr<IToolkitHost>()
+TSharedPtr<class IToolkitHost> ToolKitHost
+
+UBlueprint* a_blueprint
+UBlueprint * Blueprint
+
+const UBlueprint* a_blueprint
+const UBlueprint * Blueprint
+
+const FWiseWorldJson& a_other
+const FWiseWorldJson & Other
+
+a_other
+Other
+
+const FWiseWorldJson& a_other
+const FWiseWorldJson & Other
+
+a_other
+Other
+
+FWiseWorldJson&& a_other
+FWiseWorldJson && Other
+
+a_other
+Other
+
+FWiseWorldJson&& a_other
+FWiseWorldJson && Other
+
+a_other
+Other
+
+const FWiseWorldJson& a_other
+const FWiseWorldJson & Other
+
+a_other
+Other
+
+UObject* a_object
+UObject * Object
+
+AActor* a_actor
+AActor * Actor
+
+inline static FName s_unreal = TEXT("unreal")
+static FName Unreal = TEXT("unreal")
+
+const WiseWorldType& a_data
+const WiseWorldType & Data
+
+a_data
+Data
+
+s_unreal
+Unreal
+
+WiseWorldType& a_data
+WiseWorldType & Data
+
+a_data
+Data
+
+s_unreal
+Unreal
+
+const FWiseWorldParameter& a_wwParam
+const FWiseWorldParameter & WwParam
+
+const FEdGraphPinType& a_unrealType
+const FEdGraphPinType & UnrealType
+
+
+const FWiseWorldExportData & DataExportedFromGameEngine
+
+int32 a_version = 2
+int32 Version
+
+const FWiseWorldExportData& a_dataExportedFromGameEngine
+const FWiseWorldExportData & DataExportedFromGameEngine
+
+const FWiseWorldImportData& a_import
+const FWiseWorldImportData & Import
+
+const UWiseWorldProcedure* a_procedure = nullptr
+const UWiseWorldProcedure * Procedure
+
+int32 a_version = 2
+int32 Version
+
+const TArray<class UEdGraph*>& a_intermediateGraphs
+const int & IntermediateGraphs
+
+const UWiseWorldProcedure* a_procedure
+const UWiseWorldProcedure * Procedure
+
+const EToolkitMode::Type a_mode
+const EToolkitMode::Type Mode
+
+const TSharedPtr<class IToolkitHost>& a_toolKitHost
+const int & ToolKitHost
+
+const TArray<class UBlueprint*>& a_blueprints
+const int & Blueprints
+
+bool a_shouldOpenInDefaultsMode
+_Bool ShouldOpenInDefaultsMode
+
+ECreatedDocumentType a_graphType
+int GraphType
+
+TSharedPtr<FUICommandList> a_graphEditorCommandsList
+int GraphEditorCommandsList
+
+TSet<class UEdGraphNode*>& a_selection
+int & Selection
+
+TSharedPtr<SGraphEditor> a_rootGraph
+int RootGraph
+
+TSet<class UEdGraphNode*>& a_collapsableNodes
+int & CollapsableNodes
+
+TSharedPtr<class FAssetTypeActions_Base> m_wiseWorldBlueprintAssetTypeAction
+int WiseWorldBlueprintAssetTypeAction
+
+const UBlueprint* a_blueprint
+const UBlueprint * Blueprint
+
+a_blueprint
+Blueprint
+
+a_blueprint
+Blueprint
+
+a_blueprint
+Blueprint
+
+a_blueprint
+Blueprint
+
+a_blueprint
+Blueprint
+
+const TArray<UObject*>& a_objects
+const int & Objects
+
+TSharedPtr<class IToolkitHost> a_toolKitHost
+int ToolKitHost
+
+EToolkitMode::Type mode = a_toolKitHost.IsValid() ? EToolkitMode::WorldCentric : EToolkitMode::Standalone
+EToolkitMode::Type Mode = a_toolKitHost.IsValid() ? EToolkitMode::WorldCentric : EToolkitMode::Standalone
+
+UBlueprint* a_blueprint
+UBlueprint * Blueprint
+
+UWiseWorldProcedureBlueprintFactory* factory = NewObject<UWiseWorldProcedureBlueprintFactory>()
+UWiseWorldProcedureBlueprintFactory * Factory = NewObject<UWiseWorldProcedureBlueprintFactory>()
+
+factory
+Factory
+
+a_blueprint
+Blueprint
+
+factory
+Factory
+```
+It's far from being ready.
