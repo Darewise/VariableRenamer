@@ -18,8 +18,171 @@ cmake -B build -G "Visual Studio 17 2022" -DLLVM_DIR="path\to\llvm-project\build
 # Open build/VariableRenamer.sln and build target VariableRenamer
 ```
 
-Use tool:
+Use this tool:
 ```
 build\Debug\VariableRenamer.exe source.cpp
 build\Debug\VariableRenamer.exe --to-unreal=false source.cpp
 ```
+
+Use this tool on a unreal source file:
+
+First you need to create a run.rsp.
+I don't know yet how to automate this, but this is how I got the information.
+Modify D:\p4\wa\UnrealEngine\Engine\Source\Programs\UnrealBuildTool\Executors\ImmediateActionQueue.cs to get the flags for cl.exe.
+```
+public void Start()
+{
+	if (ShowCPUUtilization)
+	{
+		_cpuUtilizationTimer = new(x =>
+		{
+			lock (_cpuUtilization)
+			{
+				if (Utils.GetTotalCpuUtilization(out float cpuUtilization))
+				{
+					_cpuUtilization.Add(cpuUtilization);
+				}
+			}
+		}, null, 1000, 1000);
+	}
+
+	Logger.LogInformation("------ Building {TotalActions} action(s) started ------", TotalActions);
+	lock (Actions) {
+		foreach (ActionState action in Actions)
+		{
+			Logger.LogInformation("HACK: {cmd} {args}", action.Action.CommandPath, action.Action.CommandArguments);
+		}
+	}
+}
+```
+This will display the rsp file for cl.exe. 
+Example: AssetTypeActions_WiseWorldProcedureBlueprint.cpp.obj.rsp:
+```
+"D:\p4\wa\Game\Plugins\WiseWorld\Source\WiseWorld\Private\AssetTypeActions_WiseWorldProcedureBlueprint.cpp"
+/FI"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\UnrealEd\SharedPCH.UnrealEd.Cpp20.h"
+/FI"D:\p4\wa\Game\Plugins\WiseWorld\Intermediate\Build\Win64\x64\UnrealEditor\Development\WiseWorld\Definitions.WiseWorld.h"
+/Yu"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\UnrealEd\SharedPCH.UnrealEd.Cpp20.h"
+/Fp"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\UnrealEd\SharedPCH.UnrealEd.Cpp20.h.pch"
+/Fo"D:\p4\wa\Game\Plugins\WiseWorld\Intermediate\Build\Win64\x64\UnrealEditor\Development\WiseWorld\AssetTypeActions_WiseWorldProcedureBlueprint.cpp.obj"
+/sourceDependencies "D:\p4\wa\Game\Plugins\WiseWorld\Intermediate\Build\Win64\x64\UnrealEditor\Development\WiseWorld\AssetTypeActions_WiseWorldProcedureBlueprint.cpp.dep.json"
+@"D:\p4\wa\Game\Plugins\WiseWorld\Intermediate\Build\Win64\x64\UnrealEditor\Development\WiseWorld\WiseWorld.Shared.rsp"
+/Zc:inline
+/nologo
+/Oi
+/FC
+/c
+/Gw
+/Gy
+/utf-8
+/wd4819
+/DSAL_NO_ATTRIBUTE_DECLARATIONS=1
+/permissive-
+/Zc:strictStrings-
+/Zc:__cplusplus
+/D_CRT_STDIO_LEGACY_WIDE_SPECIFIERS=1
+/D_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS=1
+/D_WINDLL
+/D_DISABLE_EXTENDED_ALIGNED_STORAGE
+/Ob2
+/Ox
+/Ot
+/GF
+/errorReport:prompt
+/EHsc
+/DPLATFORM_EXCEPTIONS_DISABLED=0
+/Z7
+/MD
+/bigobj
+/fp:fast
+/Zo
+/Zp8
+/we4456
+/we4458
+/we4459
+/we4668
+/wd4244
+/wd4838
+/TP
+/GR-
+/W4
+/std:c++20
+/Zc:preprocessor
+/wd5054
+```
+Also look at the content of .dep.json:
+```
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "d:\\p4\\wa\\game\\plugins\\wiseworld\\source\\wiseworld\\private\\assettypeactions_wiseworldprocedureblueprint.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\p4\\wa\\unrealengine\\engine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.cpp20.h.pch",
+        "Includes": [
+            "d:\\p4\\wa\\game\\plugins\\wiseworld\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\wiseworld\\definitions.wiseworld.h",
+            "d:\\p4\\wa\\game\\plugins\\wiseworld\\source\\wiseworld\\private\\assettypeactions_wiseworldprocedureblueprint.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\developer\\assettools\\public\\assettypeactions\\assettypeactions_blueprint.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\developer\\assettools\\public\\assettypeactions\\assettypeactions_classtypebase.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\developer\\assettools\\public\\assettypeactions_base.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\developer\\assettools\\public\\iassettools.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\developer\\assettools\\public\\assettypecategories.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\developer\\assettools\\public\\iassettypeactions.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\developer\\merge\\public\\merge.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\editor\\unrealed\\classes\\thumbnailrendering\\thumbnailmanager.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\editor\\unrealed\\classes\\thumbnailrendering\\thumbnailrenderer.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealed\\uht\\thumbnailrenderer.generated.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealed\\uht\\thumbnailmanager.generated.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\editor\\assetdefinition\\public\\assetdefinition.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\runtime\\core\\public\\misc\\scopedslowtask.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\editor\\assetdefinition\\public\\misc\\assetfilterdata.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\editor\\assetdefinition\\public\\misc\\assetcategorypath.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\assetdefinition\\uht\\assetfilterdata.generated.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\assetdefinition\\uht\\assetdefinition.generated.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\editor\\unrealed\\public\\automatedassetimportdata.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealed\\uht\\automatedassetimportdata.generated.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\assettools\\uht\\iassettools.generated.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\developer\\assettools\\public\\assettoolsmodule.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\editor\\unrealed\\public\\toolkits\\simpleasseteditor.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\editor\\unrealed\\public\\kismet2\\blueprinteditorutils.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\editor\\classviewer\\public\\classviewermodule.h",
+            "d:\\p4\\wa\\game\\plugins\\wiseworld\\source\\wiseworld\\private\\wiseworldprocedure.h",
+            "d:\\p4\\wa\\game\\plugins\\wiseworld\\source\\wiseworld\\private\\wiseworldtypes.h",
+            "d:\\p4\\wa\\game\\plugins\\wiseworld\\intermediate\\build\\win64\\unrealeditor\\inc\\wiseworld\\uht\\wiseworldtypes.generated.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\runtime\\foliage\\public\\foliagetype.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\foliage\\uht\\foliagetype.generated.h",
+            "d:\\p4\\wa\\game\\plugins\\wiseworld\\intermediate\\build\\win64\\unrealeditor\\inc\\wiseworld\\uht\\wiseworldprocedure.generated.h",
+            "d:\\p4\\wa\\game\\plugins\\wiseworld\\source\\wiseworld\\private\\wiseworldprocedureblueprint.h",
+            "d:\\p4\\wa\\game\\plugins\\wiseworld\\intermediate\\build\\win64\\unrealeditor\\inc\\wiseworld\\uht\\wiseworldprocedureblueprint.generated.h",
+            "d:\\p4\\wa\\game\\plugins\\wiseworld\\source\\wiseworld\\private\\wiseworldprocedureblueprintfactory.h",
+            "d:\\p4\\wa\\game\\plugins\\wiseworld\\intermediate\\build\\win64\\unrealeditor\\inc\\wiseworld\\uht\\wiseworldprocedureblueprintfactory.generated.h",
+            "d:\\p4\\wa\\game\\plugins\\wiseworld\\source\\wiseworld\\private\\wiseworldprocedureeditor.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\editor\\kismet\\public\\blueprinteditor.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\editor\\kismet\\public\\blueprinteditormodule.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\editor\\unrealed\\public\\workfloworientedapp\\workflowcentricapplication.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\editor\\kismet\\public\\findinblueprints.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\editor\\kismet\\public\\findinblueprintmanager.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\kismet\\uht\\findinblueprintmanager.generated.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\editor\\kismet\\public\\skismetinspector.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\runtime\\slate\\public\\framework\\text\\slatehyperlinkrun.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\runtime\\slate\\public\\framework\\text\\ilayoutblock.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\runtime\\slate\\public\\framework\\text\\irunrenderer.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\runtime\\slate\\public\\framework\\text\\islaterun.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\editor\\propertyeditor\\public\\istructuredetailsview.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\developer\\sourcecontrol\\public\\sourcecontroloperations.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\developer\\sourcecontrol\\public\\isourcecontrolchangelist.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\developer\\sourcecontrol\\public\\sourcecontroloperationbase.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\developer\\sourcecontrol\\public\\isourcecontroloperation.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\developer\\sourcecontrol\\public\\sourcecontrolresultinfo.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\developer\\sourcecontrol\\public\\sourcecontrolpreferences.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\sourcecontrol\\uht\\sourcecontrolpreferences.generated.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\editor\\unrealed\\public\\workfloworientedapp\\workflowtabfactory.h",
+            "d:\\p4\\wa\\unrealengine\\engine\\source\\editor\\unrealed\\public\\workfloworientedapp\\workflowtabmanager.h",
+            "d:\\p4\\wa\\game\\plugins\\wiseworld\\source\\wiseworld\\public\\wiseworldmodule.h",
+            "d:\\p4\\wa\\game\\plugins\\wiseworld\\source\\wiseworld\\private\\wiseworldmacro.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
+```
+With all of this, you should be able to create a run.rsp for clang.
+Then execute run.bat

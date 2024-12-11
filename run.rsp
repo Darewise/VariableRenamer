@@ -1,0 +1,411 @@
+-Wno-everything
+-std=c++20
+-ID:\p4\wa\UnrealEngine\Engine\Intermediate
+-include d:\p4\wa\game\plugins\wiseworld\intermediate\build\win64\x64\unrealeditor\development\wiseworld\definitions.wiseworld.h
+-include d:\p4\wa\game\plugins\wiseworld\source\wiseworld\private\assettypeactions_wiseworldprocedureblueprint.h
+-include d:\p4\wa\unrealengine\engine\source\developer\assettools\public\assettypeactions\assettypeactions_blueprint.h
+-include d:\p4\wa\unrealengine\engine\source\developer\assettools\public\assettypeactions\assettypeactions_classtypebase.h
+-include d:\p4\wa\unrealengine\engine\source\developer\assettools\public\assettypeactions_base.h
+-include d:\p4\wa\unrealengine\engine\source\developer\assettools\public\iassettools.h
+-include d:\p4\wa\unrealengine\engine\source\developer\assettools\public\assettypecategories.h
+-include d:\p4\wa\unrealengine\engine\source\developer\assettools\public\iassettypeactions.h
+-include d:\p4\wa\unrealengine\engine\source\developer\merge\public\merge.h
+-include d:\p4\wa\unrealengine\engine\source\editor\unrealed\classes\thumbnailrendering\thumbnailmanager.h
+-include d:\p4\wa\unrealengine\engine\source\editor\unrealed\classes\thumbnailrendering\thumbnailrenderer.h
+-include d:\p4\wa\unrealengine\engine\intermediate\build\win64\unrealeditor\inc\unrealed\uht\thumbnailrenderer.generated.h
+-include d:\p4\wa\unrealengine\engine\intermediate\build\win64\unrealeditor\inc\unrealed\uht\thumbnailmanager.generated.h
+-include d:\p4\wa\unrealengine\engine\source\editor\assetdefinition\public\assetdefinition.h
+-include d:\p4\wa\unrealengine\engine\source\runtime\core\public\misc\scopedslowtask.h
+-include d:\p4\wa\unrealengine\engine\source\editor\assetdefinition\public\misc\assetfilterdata.h
+-include d:\p4\wa\unrealengine\engine\source\editor\assetdefinition\public\misc\assetcategorypath.h
+-include d:\p4\wa\unrealengine\engine\intermediate\build\win64\unrealeditor\inc\assetdefinition\uht\assetfilterdata.generated.h
+-include d:\p4\wa\unrealengine\engine\intermediate\build\win64\unrealeditor\inc\assetdefinition\uht\assetdefinition.generated.h
+-include d:\p4\wa\unrealengine\engine\source\editor\unrealed\public\automatedassetimportdata.h
+-include d:\p4\wa\unrealengine\engine\intermediate\build\win64\unrealeditor\inc\unrealed\uht\automatedassetimportdata.generated.h
+-include d:\p4\wa\unrealengine\engine\intermediate\build\win64\unrealeditor\inc\assettools\uht\iassettools.generated.h
+-include d:\p4\wa\unrealengine\engine\source\developer\assettools\public\assettoolsmodule.h
+-include d:\p4\wa\unrealengine\engine\source\editor\unrealed\public\toolkits\simpleasseteditor.h
+-include d:\p4\wa\unrealengine\engine\source\editor\unrealed\public\kismet2\blueprinteditorutils.h
+-include d:\p4\wa\unrealengine\engine\source\editor\classviewer\public\classviewermodule.h
+-include d:\p4\wa\game\plugins\wiseworld\source\wiseworld\private\wiseworldprocedure.h
+-include d:\p4\wa\game\plugins\wiseworld\source\wiseworld\private\wiseworldtypes.h
+-include d:\p4\wa\game\plugins\wiseworld\intermediate\build\win64\unrealeditor\inc\wiseworld\uht\wiseworldtypes.generated.h
+-include d:\p4\wa\unrealengine\engine\source\runtime\foliage\public\foliagetype.h
+-include d:\p4\wa\unrealengine\engine\intermediate\build\win64\unrealeditor\inc\foliage\uht\foliagetype.generated.h
+-include d:\p4\wa\game\plugins\wiseworld\intermediate\build\win64\unrealeditor\inc\wiseworld\uht\wiseworldprocedure.generated.h
+-include d:\p4\wa\game\plugins\wiseworld\source\wiseworld\private\wiseworldprocedureblueprint.h
+-include d:\p4\wa\game\plugins\wiseworld\intermediate\build\win64\unrealeditor\inc\wiseworld\uht\wiseworldprocedureblueprint.generated.h
+-include d:\p4\wa\game\plugins\wiseworld\source\wiseworld\private\wiseworldprocedureblueprintfactory.h
+-include d:\p4\wa\game\plugins\wiseworld\intermediate\build\win64\unrealeditor\inc\wiseworld\uht\wiseworldprocedureblueprintfactory.generated.h
+-include d:\p4\wa\game\plugins\wiseworld\source\wiseworld\private\wiseworldprocedureeditor.h
+-include d:\p4\wa\unrealengine\engine\source\editor\kismet\public\blueprinteditor.h
+-include d:\p4\wa\unrealengine\engine\source\editor\kismet\public\blueprinteditormodule.h
+-include d:\p4\wa\unrealengine\engine\source\editor\unrealed\public\workfloworientedapp\workflowcentricapplication.h
+-include d:\p4\wa\unrealengine\engine\source\editor\kismet\public\findinblueprints.h
+-include d:\p4\wa\unrealengine\engine\source\editor\kismet\public\findinblueprintmanager.h
+-include d:\p4\wa\unrealengine\engine\intermediate\build\win64\unrealeditor\inc\kismet\uht\findinblueprintmanager.generated.h
+-include d:\p4\wa\unrealengine\engine\source\editor\kismet\public\skismetinspector.h
+-include d:\p4\wa\unrealengine\engine\source\runtime\slate\public\framework\text\slatehyperlinkrun.h
+-include d:\p4\wa\unrealengine\engine\source\runtime\slate\public\framework\text\ilayoutblock.h
+-include d:\p4\wa\unrealengine\engine\source\runtime\slate\public\framework\text\irunrenderer.h
+-include d:\p4\wa\unrealengine\engine\source\runtime\slate\public\framework\text\islaterun.h
+-include d:\p4\wa\unrealengine\engine\source\editor\propertyeditor\public\istructuredetailsview.h
+-include d:\p4\wa\unrealengine\engine\source\developer\sourcecontrol\public\sourcecontroloperations.h
+-include d:\p4\wa\unrealengine\engine\source\developer\sourcecontrol\public\isourcecontrolchangelist.h
+-include d:\p4\wa\unrealengine\engine\source\developer\sourcecontrol\public\sourcecontroloperationbase.h
+-include d:\p4\wa\unrealengine\engine\source\developer\sourcecontrol\public\isourcecontroloperation.h
+-include d:\p4\wa\unrealengine\engine\source\developer\sourcecontrol\public\sourcecontrolresultinfo.h
+-include d:\p4\wa\unrealengine\engine\source\developer\sourcecontrol\public\sourcecontrolpreferences.h
+-include d:\p4\wa\unrealengine\engine\intermediate\build\win64\unrealeditor\inc\sourcecontrol\uht\sourcecontrolpreferences.generated.h
+-include d:\p4\wa\unrealengine\engine\source\editor\unrealed\public\workfloworientedapp\workflowtabfactory.h
+-include d:\p4\wa\unrealengine\engine\source\editor\unrealed\public\workfloworientedapp\workflowtabmanager.h
+-include d:\p4\wa\game\plugins\wiseworld\source\wiseworld\public\wiseworldmodule.h
+-include d:\p4\wa\game\plugins\wiseworld\source\wiseworld\private\wiseworldmacro.h
+-ID:\p4\wa\Game\Plugins\WiseWorld\Source\WiseWorld\Private
+-Id:\p4\wa\unrealengine\engine\source\runtime\Core\Public\
+-Id:\p4\wa\unrealengine\engine\source\runtime\Core\Internal
+-Id:\p4\wa\unrealengine\engine\source\runtime\TraceLog\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\Engine\UHT
+-Id:\p4\wa\unrealengine\engine\Shaders\Shared
+-Id:\p4\wa\unrealengine\engine\source\runtime\Engine\Classes
+-Id:\p4\wa\unrealengine\engine\source\runtime\Engine\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\Engine\Internal
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\CoreOnline\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\CoreOnline\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\CoreUObject\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\CoreUObject\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\CoreUObject\Internal
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\FieldNotification\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\FieldNotification\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\NetCore\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\Net\Core\Classes
+-Id:\p4\wa\unrealengine\engine\source\runtime\Net\Core\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\Net\Common\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\ImageCore\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\Json\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\JsonUtilities\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\JsonUtilities\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\SlateCore\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\SlateCore\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\InputCore\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\InputCore\Classes
+-Id:\p4\wa\unrealengine\engine\source\runtime\InputCore\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\ApplicationCore\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\RHI\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\Slate\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\Slate\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\ImageWrapper\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\Messaging\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\MessagingCommon\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\RenderCore\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\Analytics\AnalyticsET\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\Analytics\Analytics\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\Sockets\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\AssetRegistry\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\AssetRegistry\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\AssetRegistry\Internal
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\EngineMessages\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\EngineMessages\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\EngineSettings\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\EngineSettings\Classes
+-Id:\p4\wa\unrealengine\engine\source\runtime\EngineSettings\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\SynthBenchmark\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\GameplayTags\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\GameplayTags\Classes
+-Id:\p4\wa\unrealengine\engine\source\runtime\GameplayTags\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\DeveloperSettings\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\DeveloperSettings\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\PacketHandler\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\PacketHandlers\PacketHandler\Classes
+-Id:\p4\wa\unrealengine\engine\source\runtime\PacketHandlers\PacketHandler\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\PacketHandlers\ReliabilityHandlerComponent\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\AudioPlatformConfiguration\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\AudioPlatformConfiguration\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\MeshDescription\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\MeshDescription\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\StaticMeshDescription\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\StaticMeshDescription\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\SkeletalMeshDescription\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\AnimationCore\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\AnimationCore\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\PakFile\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\PakFile\Internal
+-Id:\p4\wa\unrealengine\engine\source\runtime\RSA\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\NetworkReplayStreaming\NetworkReplayStreaming\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\PhysicsCore\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\PhysicsCore\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\Experimental\ChaosCore\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\Chaos\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\Experimental\Chaos\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\Experimental\Voronoi\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\GeometryCore\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\SignalProcessing\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\AudioExtensions\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\AudioExtensions\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\AudioMixerCore\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\AudioMixer\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\AudioMixer\Classes
+-Id:\p4\wa\unrealengine\engine\source\runtime\AudioMixer\Public
+-Id:\p4\wa\unrealengine\engine\source\developer\TargetPlatform\Public
+-Id:\p4\wa\unrealengine\engine\source\developer\TextureFormat\Public
+-Id:\p4\wa\unrealengine\engine\source\developer\DesktopPlatform\Public
+-Id:\p4\wa\unrealengine\engine\source\developer\DesktopPlatform\Internal
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\AudioLinkEngine\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\AudioLink\AudioLinkEngine\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\AudioLinkCore\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\AudioLink\AudioLinkCore\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\CookOnTheFly\Internal
+-Id:\p4\wa\unrealengine\engine\source\runtime\Networking\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\Experimental\IoStoreOnDemand\Public
+-Id:\p4\wa\unrealengine\engine\source\developer\TextureBuildUtilities\Public
+-Id:\p4\wa\unrealengine\engine\source\developer\Horde\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\ClothSysRuntimeIntrfc\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\ClothingSystemRuntimeInterface\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\IrisCore\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\Experimental\Iris\Core\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\MovieSceneCapture\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\MovieSceneCapture\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\Renderer\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\Renderer\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\TypedElementFramework\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\TypedElementFramework\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\TypedElementRuntime\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\TypedElementRuntime\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\AnimationDataController\UHT
+-Id:\p4\wa\unrealengine\engine\source\developer\AnimationDataController\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\InterchangeCore\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\Interchange\Core\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\Kismet\UHT
+-Id:\p4\wa\unrealengine\engine\source\editor\Kismet\Classes
+-Id:\p4\wa\unrealengine\engine\source\editor\Kismet\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\ToolMenus\UHT
+-Id:\p4\wa\unrealengine\engine\source\developer\ToolMenus\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\UnrealEd\UHT
+-Id:\p4\wa\unrealengine\engine\source\Programs\UnrealLightmass\Public
+-Id:\p4\wa\unrealengine\engine\source\editor\UnrealEd\Classes
+-Id:\p4\wa\unrealengine\engine\source\editor\UnrealEd\Public
+-Id:\p4\wa\unrealengine\engine\source\editor\UnrealEd\Internal
+-Id:\p4\wa\unrealengine\engine\source\editor\AssetTagsEditor\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\CollectionManager\UHT
+-Id:\p4\wa\unrealengine\engine\source\developer\CollectionManager\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\ContentBrowser\UHT
+-Id:\p4\wa\unrealengine\engine\source\editor\ContentBrowser\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\AssetTools\UHT
+-Id:\p4\wa\unrealengine\engine\source\developer\AssetTools\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\AssetDefinition\UHT
+-Id:\p4\wa\unrealengine\engine\source\editor\AssetDefinition\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\EditorSubsystem\UHT
+-Id:\p4\wa\unrealengine\engine\source\editor\EditorSubsystem\Public
+-Id:\p4\wa\unrealengine\engine\source\developer\Merge\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\EditorFramework\UHT
+-Id:\p4\wa\unrealengine\engine\source\editor\EditorFramework\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\InteractiveToolsFramework\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\InteractiveToolsFramework\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\ContentBrowserData\UHT
+-Id:\p4\wa\unrealengine\engine\source\editor\ContentBrowserData\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\Projects\Public
+-Id:\p4\wa\unrealengine\engine\source\developer\MeshUtilities\Public
+-Id:\p4\wa\unrealengine\engine\source\developer\MeshMergeUtilities\Public
+-Id:\p4\wa\unrealengine\engine\source\developer\MeshReductionInterface\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\RawMesh\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\MaterialUtilities\UHT
+-Id:\p4\wa\unrealengine\engine\source\developer\MaterialUtilities\Public
+-Id:\p4\wa\unrealengine\engine\source\editor\KismetCompiler\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\GameplayTasks\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\GameplayTasks\Classes
+-Id:\p4\wa\unrealengine\engine\source\runtime\GameplayTasks\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\PropertyEditor\UHT
+-Id:\p4\wa\unrealengine\engine\source\editor\PropertyEditor\Public
+-Id:\p4\wa\unrealengine\engine\source\editor\PropertyEditor\Internal
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\EditorConfig\UHT
+-Id:\p4\wa\unrealengine\engine\source\editor\EditorConfig\Public
+-Id:\p4\wa\unrealengine\engine\source\editor\ActorPickerMode\Public
+-Id:\p4\wa\unrealengine\engine\source\editor\SceneDepthPickerMode\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\ClassViewer\UHT
+-Id:\p4\wa\unrealengine\engine\source\editor\ClassViewer\Public
+-Id:\p4\wa\unrealengine\engine\source\developer\DirectoryWatcher\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\Documentation\UHT
+-Id:\p4\wa\unrealengine\engine\source\editor\Documentation\Public
+-Id:\p4\wa\unrealengine\engine\source\editor\MainFrame\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\SandboxFile\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\SourceControl\UHT
+-Id:\p4\wa\unrealengine\engine\source\developer\SourceControl\Public
+-Id:\p4\wa\unrealengine\engine\source\developer\UncontrolledChangelists\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\UnrealEdMessages\UHT
+-Id:\p4\wa\unrealengine\engine\source\editor\UnrealEdMessages\Classes
+-Id:\p4\wa\unrealengine\engine\source\editor\UnrealEdMessages\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\BlueprintGraph\UHT
+-Id:\p4\wa\unrealengine\engine\source\editor\BlueprintGraph\Classes
+-Id:\p4\wa\unrealengine\engine\source\editor\BlueprintGraph\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\Online\HTTP\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\Online\HTTP\Internal
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\FunctionalTesting\UHT
+-Id:\p4\wa\unrealengine\engine\source\developer\FunctionalTesting\Classes
+-Id:\p4\wa\unrealengine\engine\source\developer\FunctionalTesting\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\AutomationController\UHT
+-Id:\p4\wa\unrealengine\engine\source\developer\AutomationController\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\AutomationTest\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\AutomationTest\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\Localization\UHT
+-Id:\p4\wa\unrealengine\engine\source\developer\Localization\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\AudioEditor\UHT
+-Id:\p4\wa\unrealengine\engine\source\editor\AudioEditor\Classes
+-Id:\p4\wa\unrealengine\engine\source\editor\AudioEditor\Public
+-Id:\p4\wa\unrealengine\engine\source\ThirdParty\libSampleRate\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\LevelEditor\UHT
+-Id:\p4\wa\unrealengine\engine\source\editor\LevelEditor\Public
+-Id:\p4\wa\unrealengine\engine\source\editor\CommonMenuExtensions\Public
+-Id:\p4\wa\unrealengine\engine\source\developer\Settings\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\ToolWidgets\UHT
+-Id:\p4\wa\unrealengine\engine\source\developer\ToolWidgets\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\VREditor\UHT
+-Id:\p4\wa\unrealengine\engine\source\editor\VREditor\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\ViewportInteraction\UHT
+-Id:\p4\wa\unrealengine\engine\source\editor\ViewportInteraction\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\HeadMountedDisplay\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\HeadMountedDisplay\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\Landscape\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\Landscape\Classes
+-Id:\p4\wa\unrealengine\engine\source\runtime\Landscape\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\DetailCustomizations\UHT
+-Id:\p4\wa\unrealengine\engine\source\editor\DetailCustomizations\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\GraphEditor\UHT
+-Id:\p4\wa\unrealengine\engine\source\editor\GraphEditor\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\StructViewer\UHT
+-Id:\p4\wa\unrealengine\engine\source\editor\StructViewer\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\NetworkFileSystem\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\UMG\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\UMG\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\MovieScene\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\MovieScene\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\TimeManagement\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\TimeManagement\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\MovieSceneTracks\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\MovieSceneTracks\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\Constraints\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\Experimental\Animation\Constraints\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\PropertyPath\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\PropertyPath\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\NavigationSystem\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\NavigationSystem\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\GeometryCollectionEngine\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\Experimental\GeometryCollectionEngine\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\FieldSystemEngine\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\Experimental\FieldSystem\Source\FieldSystemEngine\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\ChaosSolverEngine\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\Experimental\ChaosSolverEngine\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\DataflowCore\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\Experimental\Dataflow\Core\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\DataflowEngine\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\Experimental\Dataflow\Engine\Public
+-Id:\p4\wa\unrealengine\engine\source\developer\MeshBuilder\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\MeshUtilitiesCommon\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\MSQS\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\MaterialShaderQualitySettings\Classes
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\ToolMenusEditor\UHT
+-Id:\p4\wa\unrealengine\engine\source\editor\ToolMenusEditor\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\StatusBar\UHT
+-Id:\p4\wa\unrealengine\engine\source\editor\StatusBar\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\InterchangeEngine\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\Interchange\Engine\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\DeveloperToolSettings\UHT
+-Id:\p4\wa\unrealengine\engine\source\developer\DeveloperToolSettings\Classes
+-Id:\p4\wa\unrealengine\engine\source\developer\DeveloperToolSettings\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\SubobjectDataInterface\UHT
+-Id:\p4\wa\unrealengine\engine\source\editor\SubobjectDataInterface\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\SubobjectEditor\UHT
+-Id:\p4\wa\unrealengine\engine\source\editor\SubobjectEditor\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\PhysicsUtilities\UHT
+-Id:\p4\wa\unrealengine\engine\source\developer\PhysicsUtilities\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\WidgetRegistration\UHT
+-Id:\p4\wa\unrealengine\engine\source\developer\WidgetRegistration\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\LandscapeEditor\UHT
+-Id:\p4\wa\unrealengine\engine\source\editor\LandscapeEditor\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\Foliage\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\Foliage\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\BlueprintEditorLibrary\UHT
+-Id:\p4\wa\unrealengine\engine\source\editor\BlueprintEditorLibrary\Public
+-Id:\p4\wa\unrealengine\engine\Plugins\Experimental\PythonScriptPlugin\Intermediate\Build\Win64\UnrealEditor\Inc\PythonScriptPlugin\UHT
+-Id:\p4\wa\unrealengine\engine\Plugins\Experimental\PythonScriptPlugin\Source\PythonScriptPlugin\Public
+-ID:\p4\wa\Game\Intermediate\Build\Win64\UnrealEditor\Inc\DWCommon\UHT
+-ID:\p4\wa\Game\Source
+-Id:\p4\wa\unrealengine\engine\Plugins\Runtime\CommonUI\Intermediate\Build\Win64\UnrealEditor\Inc\CommonUI\UHT
+-Id:\p4\wa\unrealengine\engine\Plugins\Runtime\CommonUI\Source\CommonUI\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\WidgetCarousel\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\WidgetCarousel\Public
+-Id:\p4\wa\unrealengine\engine\Plugins\Runtime\CommonUI\Intermediate\Build\Win64\UnrealEditor\Inc\CommonInput\UHT
+-Id:\p4\wa\unrealengine\engine\Plugins\Runtime\CommonUI\Source\CommonInput\Public
+-Id:\p4\wa\unrealengine\engine\Plugins\EnhancedInput\Intermediate\Build\Win64\UnrealEditor\Inc\EnhancedInput\UHT
+-Id:\p4\wa\unrealengine\engine\Plugins\EnhancedInput\Source\EnhancedInput\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\MediaAssets\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\MediaAssets\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\Media\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\ColorManagement\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\MediaUtils\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\MediaUtils\Public
+-ID:\p4\wa\Game\Plugins\Wwise\Intermediate\Build\Win64\UnrealEditor\Inc\AkAudio\UHT
+-ID:\p4\wa\Game\Plugins\Wwise\Source
+-ID:\p4\wa\Game\Plugins\Wwise\Source\AkAudio\Classes
+-ID:\p4\wa\Game\Plugins\Wwise\Source\AkAudio\Public
+-ID:\p4\wa\Game\Plugins\Wwise\Source\WwiseConcurrency\Public
+-ID:\p4\wa\Game\Plugins\Wwise\Source\WwiseUtils\Public
+-ID:\p4\wa\Game\Plugins\Wwise\Intermediate\Build\Win64\UnrealEditor\Inc\WwiseResourceLoader\UHT
+-ID:\p4\wa\Game\Plugins\Wwise\Source\WwiseResourceLoader\Public
+-ID:\p4\wa\Game\Plugins\Wwise\Intermediate\Build\Win64\UnrealEditor\Inc\WwiseFileHandler\UHT
+-ID:\p4\wa\Game\Plugins\Wwise\Source\WwiseFileHandler\Public
+-ID:\p4\wa\Game\Plugins\Wwise\Source\WwiseSoundEngine_2023_1\Public
+-ID:\p4\wa\Game\Plugins\Wwise\ThirdParty\include
+-ID:\p4\wa\Game\Plugins\Wwise\Source\WwiseSoundEngine_Null\Public
+-ID:\p4\wa\Game\Plugins\Wwise\Source\WwiseSoundEngine\Public
+-ID:\p4\wa\Game\Plugins\Wwise\Intermediate\Build\Win64\UnrealEditor\Inc\WwiseObjectUtils\UHT
+-ID:\p4\wa\Game\Plugins\Wwise\Source\WwiseObjectUtils\Public
+-ID:\p4\wa\Game\Plugins\Wwise\Source\WwiseObstructionOcclusion\Public
+-ID:\p4\wa\Game\Plugins\Wwise\Source\WwiseEngineUtils\Public
+-ID:\p4\wa\Game\Plugins\Wwise\Source\WwiseProcessing\Public
+-ID:\p4\wa\Game\Plugins\Wwise\Intermediate\Build\Win64\UnrealEditor\Inc\WwiseProjectDatabase\UHT
+-ID:\p4\wa\Game\Plugins\Wwise\Source\WwiseProjectDatabase\Public
+-Id:\p4\wa\unrealengine\engine\Plugins\Online\OnlineSubsystem\Intermediate\Build\Win64\UnrealEditor\Inc\OnlineSubsystem\UHT
+-Id:\p4\wa\unrealengine\engine\Plugins\Online\OnlineSubsystem\Source\Test
+-Id:\p4\wa\unrealengine\engine\Plugins\Online\OnlineSubsystem\Source\Public
+-Id:\p4\wa\unrealengine\engine\Plugins\Online\OnlineBase\Source\Public
+-Id:\p4\wa\unrealengine\engine\Plugins\Online\OnlineSubsystemUtils\Intermediate\Build\Win64\UnrealEditor\Inc\OnlineSubsystemUtils\UHT
+-Id:\p4\wa\unrealengine\engine\Plugins\Online\OnlineSubsystemUtils\Source\OnlineSubsystemUtils\Classes
+-Id:\p4\wa\unrealengine\engine\Plugins\Online\OnlineSubsystemUtils\Source\OnlineSubsystemUtils\Public
+-Id:\p4\wa\unrealengine\engine\Plugins\Online\OnlineSubsystemEOS\Intermediate\Build\Win64\UnrealEditor\Inc\OnlineSubsystemEOS\UHT
+-Id:\p4\wa\unrealengine\engine\Plugins\Online\OnlineSubsystemEOS\Source\OnlineSubsystemEOS\Public
+-Id:\p4\wa\unrealengine\engine\Plugins\Online\EOSShared\Source\EOSShared\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\Blutility\UHT
+-Id:\p4\wa\unrealengine\engine\source\editor\Blutility\Classes
+-Id:\p4\wa\unrealengine\engine\source\editor\Blutility\Public
+-Id:\p4\wa\unrealengine\engine\Plugins\Editor\EditorScriptingUtilities\Intermediate\Build\Win64\UnrealEditor\Inc\EditorScriptingUtilities\UHT
+-Id:\p4\wa\unrealengine\engine\Plugins\Editor\EditorScriptingUtilities\Source\EditorScriptingUtilities\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\StaticMeshEditor\UHT
+-Id:\p4\wa\unrealengine\engine\source\editor\StaticMeshEditor\Public
+-Id:\p4\wa\unrealengine\engine\Plugins\Experimental\PCG\Intermediate\Build\Win64\UnrealEditor\Inc\PCG\UHT
+-Id:\p4\wa\unrealengine\engine\Plugins\Experimental\PCG\Source\PCG\Public
+-Id:\p4\wa\unrealengine\engine\Plugins\Experimental\StructUtils\Intermediate\Build\Win64\UnrealEditor\Inc\StructUtils\UHT
+-Id:\p4\wa\unrealengine\engine\Plugins\Experimental\StructUtils\Source\StructUtils\Public
+-Id:\p4\wa\unrealengine\engine\Plugins\Experimental\ScriptableToolsEditorMode\Intermediate\Build\Win64\UnrealEditor\Inc\ScriptableToolsEditorMode\UHT
+-Id:\p4\wa\unrealengine\engine\Plugins\Experimental\ScriptableToolsEditorMode\Source\ScriptableToolsEditorMode\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\EditorWidgets\UHT
+-Id:\p4\wa\unrealengine\engine\source\editor\EditorWidgets\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\EditorInteractiveToolsFramework\UHT
+-Id:\p4\wa\unrealengine\engine\source\editor\Experimental\EditorInteractiveToolsFramework\Public
+-Id:\p4\wa\unrealengine\engine\Plugins\Experimental\ScriptableToolsFramework\Intermediate\Build\Win64\UnrealEditor\Inc\ScriptableToolsFramework\UHT
+-Id:\p4\wa\unrealengine\engine\Plugins\Experimental\ScriptableToolsFramework\Source\ScriptableToolsFramework\Public
+-Id:\p4\wa\unrealengine\engine\Plugins\Experimental\ScriptableToolsFramework\Intermediate\Build\Win64\UnrealEditor\Inc\EditorScriptableToolsFramework\UHT
+-Id:\p4\wa\unrealengine\engine\Plugins\Experimental\ScriptableToolsFramework\Source\EditorScriptableToolsFramework\Public
+-Id:\p4\wa\unrealengine\engine\Plugins\Runtime\MeshModelingToolset\Intermediate\Build\Win64\UnrealEditor\Inc\ModelingComponents\UHT
+-Id:\p4\wa\unrealengine\engine\Plugins\Runtime\MeshModelingToolset\Source\ModelingComponents\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\GeometryFramework\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\GeometryFramework\Public
+-Id:\p4\wa\unrealengine\engine\source\runtime\MeshConversion\Public
+-Id:\p4\wa\unrealengine\engine\Plugins\Runtime\GeometryProcessing\Source\GeometryAlgorithms\Public
+-Id:\p4\wa\unrealengine\engine\Plugins\Runtime\GeometryProcessing\Source\DynamicMesh\Public
+-Id:\p4\wa\unrealengine\engine\Plugins\Runtime\MeshModelingToolset\Intermediate\Build\Win64\UnrealEditor\Inc\ModelingOperators\UHT
+-Id:\p4\wa\unrealengine\engine\Plugins\Runtime\MeshModelingToolset\Source\ModelingOperators\Public
+-Id:\p4\wa\unrealengine\engine\intermediate\build\win64\UnrealEditor\Inc\TextureUtilitiesCommon\UHT
+-Id:\p4\wa\unrealengine\engine\source\runtime\TextureUtilitiesCommon\Public
+-ID:\p4\wa\Game\Plugins\WiseWorld\Intermediate\Build\Win64\UnrealEditor\Inc\WiseWorld\UHT
+-ID:\p4\wa\Game\Plugins\WiseWorld\Source
+-ID:\p4\wa\Game\Plugins\WiseWorld\Source\WiseWorld\Public

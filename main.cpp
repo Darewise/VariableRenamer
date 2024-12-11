@@ -11,6 +11,8 @@
 #include "clang/Rewrite/Core/Rewriter.h"
 #include <iostream>
 #include <regex>
+#include <fstream>
+#include <sstream>
 
 using namespace clang;
 using namespace clang::tooling;
@@ -19,7 +21,8 @@ using namespace clang::ast_matchers;
 static llvm::cl::opt<bool> fromDarewiseToUnreal("to-unreal", llvm::cl::desc("Convert from Darewise to Unreal naming convention"), llvm::cl::init(true));
 static llvm::cl::opt<bool> s_verbose("verbose", llvm::cl::desc("Print changes"), llvm::cl::init(true));
 static llvm::cl::opt<bool> s_dryRun("dry-run", llvm::cl::desc("Do not overwrite files"), llvm::cl::init(false));
-static llvm::cl::opt<std::string> s_excludeRegex("exclude", llvm::cl::desc("Exclude files"), llvm::cl::init(""));
+static llvm::cl::opt<std::string> s_includeRegex("include", llvm::cl::desc("Regex to match files to edit"), llvm::cl::init(""));
+static llvm::cl::opt<std::string> s_argsFile("args-file", llvm::cl::desc("Path to file containing additional arguments"), llvm::cl::value_desc("file"));
 
 // Helper function to convert camelCase to PascalCase and vice versa
 std::string toPascalCase(std::string name)
@@ -60,7 +63,7 @@ class FindMemberVar : public MatchFinder::MatchCallback
 {
 public:
 	FindMemberVar(MatchFinder& a_finder)
-	: m_exclude(s_excludeRegex)
+	: m_include(s_includeRegex, std::regex_constants::icase)
 	{
 		a_finder.addMatcher(fieldDecl().bind("memberVar"), this);
 	}
@@ -74,7 +77,7 @@ public:
 		{
 			const std::string name = fieldDecl->getName().str();
 			const std::string filename = std::string(sourceManager.getFilename(fieldDecl->getLocation()));
-			if (std::regex_match(filename, m_exclude))
+			if (!std::regex_match(filename, m_include))
 			{
 				std::cout << "Excluding: " << name << " in " << filename << std::endl;
 				return;
@@ -86,7 +89,7 @@ public:
 
 private:
 	std::set<std::string> m_found;
-	const std::regex m_exclude;
+	const std::regex m_include;
 };
 
 class ReplaceMemberVar : public MatchFinder::MatchCallback
@@ -181,7 +184,7 @@ class FindArgVar : public MatchFinder::MatchCallback
 {
 public:
 	FindArgVar(MatchFinder& a_finder)
-	: m_exclude(s_excludeRegex)
+	: m_include(s_includeRegex, std::regex_constants::icase)
 	{
 		a_finder.addMatcher(parmVarDecl().bind("argVar"), this);
 	}
@@ -196,7 +199,7 @@ public:
 		{
 			const std::string name = parmVarDecl->getName().str();
 			const std::string filename = std::string(sourceManager.getFilename(parmVarDecl->getLocation()));
-			if (std::regex_match(filename, m_exclude))
+			if (!std::regex_match(filename, m_include))
 			{
 				std::cout << "Excluding: " << name << " in " << filename << std::endl;
 				return;
@@ -208,7 +211,7 @@ public:
 
 private:
 	std::set<std::string> m_found;
-	const std::regex m_exclude;
+	const std::regex m_include;
 };
 
 class ReplaceArgVar : public MatchFinder::MatchCallback
@@ -297,7 +300,7 @@ class FindLocalVar : public MatchFinder::MatchCallback
 {
 public:
 	FindLocalVar(MatchFinder& a_finder)
-	: m_exclude(s_excludeRegex)
+	: m_include(s_includeRegex, std::regex_constants::icase)
 	{
 		a_finder.addMatcher(varDecl(hasLocalStorage(), unless(parmVarDecl())).bind("localVar"), this);
 	}
@@ -312,7 +315,7 @@ public:
 		{
 			const std::string name = varDecl->getName().str();
 			const std::string filename = std::string(sourceManager.getFilename(varDecl->getLocation()));
-			if (std::regex_match(filename, m_exclude))
+			if (!std::regex_match(filename, m_include))
 			{
 				std::cout << "Excluding: " << name << " in " << filename << std::endl;
 				return;
@@ -324,7 +327,7 @@ public:
 
 private:
 	std::set<std::string> m_found;
-	const std::regex m_exclude;
+	const std::regex m_include;
 };
 
 class ReplaceLocalVar : public MatchFinder::MatchCallback
@@ -414,7 +417,7 @@ class FindStaticVar : public MatchFinder::MatchCallback
 {
 public:
 	FindStaticVar(MatchFinder& a_finder)
-	: m_exclude(s_excludeRegex)
+	: m_include(s_includeRegex, std::regex_constants::icase)
 	{
 		a_finder.addMatcher(varDecl(isStaticStorageClass()).bind("staticVar"), this);
 	}
@@ -429,7 +432,7 @@ public:
 		{
 			const std::string name = varDecl->getName().str();
 			const std::string filename = std::string(sourceManager.getFilename(varDecl->getLocation()));
-			if (std::regex_match(filename, m_exclude))
+			if (!std::regex_match(filename, m_include))
 			{
 				std::cout << "Excluding: " << name << " in " << filename << std::endl;
 				return;
@@ -441,7 +444,7 @@ public:
 
 private:
 	std::set<std::string> m_found;
-	const std::regex m_exclude;
+	const std::regex m_include;
 };
 
 class ReplaceStaticVar : public MatchFinder::MatchCallback
@@ -555,13 +558,56 @@ private:
 };
 
 int main(int argc, const char **argv) {
+	/* Useful to debug regex
+	const std::string regex = "D:\\\\p4\\\\wa\\\\Game\\\\Plugins\\\\WiseWorld\\\\Source\\\\WiseWorld\\\\.*";
+	std::cerr << "regex:" << regex << std::endl;
+	assert(std::regex_match("D:\\p4\\wa\\Game\\Plugins\\WiseWorld\\Source\\WiseWorld\\Public\\WiseWorldModule.h",
+	             std::regex(regex)));
+	assert(std::regex_match("d:\\p4\\wa\\game\\plugins\\wiseworld\\source\\wiseworld\\public\\wiseworldmodule.h", std::regex(regex, std::regex_constants::icase)));
+	*/
+
+	std::vector<const char*> combinedArgs(argv, argv + argc);
+	s_argsFile.setValue("run.rsp"); // TODO: try parse argsFile
+	if (!s_argsFile.empty())
+	{
+		
+		std::cerr << "Reading extra args from:" << s_argsFile << std::endl;
+		std::ifstream file(s_argsFile);
+		if (!file)
+		{
+			llvm::errs() << "Error: Unable to open arguments file: " << s_argsFile << "\n";
+		}
+		else
+		{
+			std::string line;
+			while (std::getline(file, line))
+			{
+				std::istringstream stream(line);
+				std::string arg;
+				while (stream >> arg)
+				{
+					// Add each argument from the file to the argument list
+					combinedArgs.push_back(strdup(arg.c_str())); // strdup ensures memory safety
+					std::cerr << arg << std::endl;
+				}
+			}
+		}
+	}
+
+	int size = combinedArgs.size();
 	static llvm::cl::OptionCategory MyToolCategory("Naming convention renaming tool");
-	auto ExpectedParser = CommonOptionsParser::create(argc, argv, MyToolCategory);
+	llvm::Expected<CommonOptionsParser> ExpectedParser = CommonOptionsParser::create(size, combinedArgs.data(), MyToolCategory);
 	if (!ExpectedParser)
 	{
 		llvm::errs() << ExpectedParser.takeError();
 		return 1;
 	}
+
+	/* Useful to debug regex
+	std::cerr << "s_includeRegex:" << s_includeRegex.getValue() << std::endl;
+	assert(s_includeRegex.getValue() == regex);
+	*/
+
 	CommonOptionsParser& OptionsParser = ExpectedParser.get();
     ClangTool Tool(OptionsParser.getCompilations(), OptionsParser.getSourcePathList());
 
@@ -572,7 +618,13 @@ int main(int argc, const char **argv) {
 	FindStaticVar findStaticVar {findOnly};
 
 	bool canRunFindOnly = 0 == Tool.run(newFrontendActionFactory(&findOnly).get());
-	assert(canRunFindOnly);
+	// assert(canRunFindOnly); // Hard to make it work on unreal sources
+	int total = findMemberVar.getFound().size() + findArgVar.getFound().size() + findLocalVar.getFound().size() + findStaticVar.getFound().size();
+	std::cerr << "Found: " << total << std::endl;
+	if (!total)
+	{
+		return 0;
+	}
 
 	MatchFinder findAndReplace;
 	Rewriter rewriter;
@@ -582,5 +634,5 @@ int main(int argc, const char **argv) {
 	ReplaceStaticVar replaceStaticVar {findAndReplace, rewriter, findStaticVar.getFound()};
 	
 	bool canRunFindAndReplace = 0 == Tool.run(newFrontendActionFactory(&findAndReplace).get());
-	assert(canRunFindAndReplace);
+	// assert(canRunFindAndReplace); // Hard to make it work on unreal sources
 }
